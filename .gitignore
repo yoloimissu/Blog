@@ -1,0 +1,10 @@
+.deploy_git
+ 
+db.json
+
+node_modules
+live2d_models
+
+public
+
+.github
