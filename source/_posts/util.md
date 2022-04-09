@@ -20,7 +20,8 @@ sticky: 1
 - [geek](https://geekuninstaller.com/download) 卸载工具
 - [utools](http://www.u.tools/) 集成工具
 - [idm](https://www.423down.com/575.html) 下载工具
-- [文件蜈蚣](http://www.filecxx.com/zh_CN/index.html)下载工具
+- [Clone-Wars](https://github.com/GorvGoyl/Clone-Wars)
+- [开源地址](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FZ4nzu%2Fhackingtool)
 - [龙轩导航](http://ilxdh.com/)集成网
 - [potplayer](http://potplayer.tv/?lang=zh_CN)视频
 - [Typora 1.0.2](https://www.ghxi.com/typora.html)Markdown编辑器

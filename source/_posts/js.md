@@ -123,7 +123,23 @@ var x = 4, y = 6;
 
 7. `join`就是把数组转换为字符串默认使用‘，’连接
 
-8. sort()：将数组里的项从小到大排序这是按照ASCII排列
+8. sort()：将数组里的项从小到大排序这是按照ASCII排列，传入一个函数如下可以正常排序，也可以和math.random一起使用打乱数组
+
+   ```js
+   const array  = [40, 10, 9, 5, 55, 19];
+   array.sort((a,b) => a-b);
+   // 输出
+    [5, 9, 10, 19, 40, 55]
+   
+   array.sort((a,b) => b-a);
+   // 输出
+   [55, 40, 19, 10, 9, 5]
+   array.sort(() => {
+       return Math.random() - 0.5;
+   });
+   ```
+
+   
 
 9. reverse()：反转数组项的顺序
 
@@ -133,11 +149,34 @@ var x = 4, y = 6;
 
 12. map()：指“映射”，对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
 
-13. filter()：“过滤”功能，数组中的每一项运行给定函数，返回满足过滤条件组成的数组。
+13. filter()：“过滤”功能，数组中的每一项运行给定函数，返回满足过滤条件组成的数组。过滤出虚假值,重复值(也可以使用es6set)
+
+    ```js
+    const array = [3, 0, 6, 7, '', false];
+    array.filter(Boolean);
+    // 输出
+    [3, 6, 7]
+    const array  = [5,4,7,8,9,2,7,5];
+    array.filter((item,idx,arr) => arr.indexOf(item) === idx);
+    [...new Set(array)];
+    ```
+
+    
 
 14. every()：判断数组中每一项都是否满足条件，只有所有项都满足条件，才会返回true
 
 15. some()：判断数组中是否存在满足条件的项，只要有一项满足条件，就会返回true。
+
+16. Array.reduce方法的使用
+
+    reduce(fn,initValue)接收2个参数。第一个是迭代器函数，函数的作用是对数组中从左到右的每一个元素进行处理。函数有4个参数，分别是accumulator、currentValue、currentIndex、array。
+    accumulator 累加器，即函数上一次调用的返回值。
+    第一次的时候为 initialValue || arr[0]
+    currentValue 数组中函数正在处理的的值
+    第一次的时候initialValue || arr[1]
+    currentIndex 数组中函数正在处理的的索引
+    array 函数调用的数组
+    initValue reduce 的第二个可选参数，累加器的初始值。没有时，累加器第一次的值为currentValue；
 
 ### 数组方法
 
@@ -147,15 +186,16 @@ var x = 4, y = 6;
 
 3. Array.of()
 
-    
-
-   ```js
+  ```js
    Array.of(7);       // [7]
    Array.of(1, 2, 3); // [1, 2, 3]
    
    Array(7);          // [ , , , , , , ]
    Array(1, 2, 3);    // [1, 2, 3]
-   ```
+  ```
+
+4. 
+
 
 ### 字符串
 
@@ -183,11 +223,11 @@ var x = 4, y = 6;
 
    1. ```js
       num.toFixed(2);js   //四舍五入
-      ```
+   ```
 
    2. ```js
       Math.floor(15.7784514000 * 100) / 100 // 输出结果为 15.77
-      ```
+   ```
 
 
 

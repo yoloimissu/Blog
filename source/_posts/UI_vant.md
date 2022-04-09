@@ -21,7 +21,7 @@ categories:
 
 在 vite 项目中按需引入组件（推荐）在 vite 项目中使用 Vant 时，推荐vite-plugin-style-import它可以自动按需引入组件的样式。
 ### 安装插件
-```
+```bash
 # 通过 npm 安装
 npm i vite-plugin-style-import@1.4.1 -D
 
@@ -126,7 +126,7 @@ app.component(Button.name, Button);
 ```
 #### 局部注册
 
-```
+```js
 import { Button } from 'vant';
 
 export default {
@@ -138,7 +138,7 @@ export default {
 #### `<script setup>(vue3)`
 
 在 `<script setup>` 中可以直接使用 Vant 组件，不需要进行组件注册。
-```
+```xml
 <script setup>
   import { Button } from 'vant';
 </script>
@@ -149,7 +149,7 @@ export default {
 ```
 #### JSX/TSX(react)
 
-```
+```xml
 import { Button } from 'vant';
 
 export default {
@@ -162,7 +162,7 @@ export default {
 
 ### `viewport` 布局
 Vant 默认使用 `px` 作为样式单位，如果需要使用 `viewport` 单位 (vw, vh, vmin, vmax)，推荐使用 postcss-px-to-viewport进行转换。postcss-px-to-viewport是一款 PostCSS 插件，用于将 px 单位转化为 vw/vh 单位。
-```
+```js
 // postcss.config.js
 module.exports = {
   plugins: {
@@ -177,7 +177,7 @@ module.exports = {
 
 *   [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 PostCSS 插件，用于将 px 单位转化为 rem 单位
 *   [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
-```
+```js
 // postcss.config.js
 module.exports = {
   plugins: {
@@ -193,7 +193,7 @@ module.exports = {
 
 ### 通过 npm 安装
 
-```js
+```bash
 # 通过 npm 安装
 npm i @vant/weapp -S --production
 

@@ -37,9 +37,11 @@ copy:
 social:
   #支持 font-awesome v6图标 https://fontawesome.com/icons?from=io 
   # fab fa-github: https://gitee.com/yslin1126 || Github
-  fa-solid fa-envelope:  mailto:ysl_1998@126.com || Email
+  # fa-solid fa-envelope:  mailto:ysl_1998@126.com || Email
+  iconfont icon-youjian:  mailto:ysl_1998@126.com || Email
   # uin要联系的QQ号
-  fa-brands fa-qq: tencent://message/?Menu=yes&uin=2609014220&Site=80fans&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a545b1714f9d45 || QQ
+  # fa-brands fa-qq: tencent://message/?Menu=yes&uin=2609014220&Site=80fans&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a545b1714f9d45 || QQ
+  iconfont icon-QQ: tencent://message/?Menu=yes&uin=2609014220&Site=80fans&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a545b1714f9d45 || QQ
 
 # search (搜索)
 # --------------------------------------
@@ -823,7 +825,7 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder:
   blur: false
@@ -857,7 +859,7 @@ inject:
     # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.2/custom.css" >
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.1/custom.css" >
     # 图标
-    # - <link rel="stylesheet" href="/css/icon.css" >
+    - <link rel="stylesheet" href="/css/icon.css" >
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
