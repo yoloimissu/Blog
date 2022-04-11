@@ -134,22 +134,6 @@ cover:
     - /img/bgh.jpg
     - /img/bgi.jpg
     - /img/bgj.jpg
-    - /img/bgk.jpg
-    - /img/bgl.jpg
-    - /img/bgm.jpg
-    - /img/bgn.jpg
-    - /img/bgo.jpg
-    - /img/bgp.jpg
-    - /img/bgq.jpg
-    - /img/bgr.jpg
-    - /img/bgs.jpg
-    - /img/bgt.jpg
-    - /img/bgu.jpg
-    - /img/bgv.jpg
-    - /img/bgw.jpg
-    - /img/bgx.jpg
-    - /img/bgy.jpg
-    - /img/bgz.jpg
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -857,7 +841,6 @@ inject:
     # - <link rel="stylesheet" href="/css/custom.css" >
     #线上css
     # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.2/custom.css" >
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.1/custom.css" >
     # 图标
     - <link rel="stylesheet" href="/css/icon.css" >
     # - <link rel="stylesheet" href="/xxx.css">

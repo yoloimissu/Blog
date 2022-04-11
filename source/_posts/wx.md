@@ -250,3 +250,25 @@ WXML的冒泡事件列表：
 ```
 
 ### 事件详情见 [链接]([事件 | 微信开放文档 (qq.com)](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html))
+
+## 微信小程序
+
+### 去除自带顶部导航栏
+
+ **全部去除app.js**
+
+```json
+"window": {
+    "navigationStyle": "custom",
+}
+```
+
+**页面的json文件**
+
+> `"navigationStyle": "custom",`
+
+### 微信小程序换行 br 无效解决方法
+
+在微信小程序中，不识别`<br/>`等标签。
+如果文字中想要折行显示，可以使用`\n`替代`<br/>`。
+注意：使用`\n`的时候，一定是在`<text>`标签内，如果在`<view>`标签中，`\n`并没有折行左右，只是显示一个空格。
