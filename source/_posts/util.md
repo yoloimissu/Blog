@@ -16,6 +16,7 @@ sticky: 1
 - [ECMAScript 6 入门](https://es6.ruanyifeng.com/)
 - [Node入门](https://www.nodebeginner.org/index-zh-cn.html)
 - [现代 Web 开发](https://fullstackopen.com/en)：Nodejs + React 的在线互动教程。
+- [工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
 ## 软件小工具
 - [geek](https://geekuninstaller.com/download) 卸载工具
 - [utools](http://www.u.tools/) 集成工具

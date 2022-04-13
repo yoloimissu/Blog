@@ -251,7 +251,7 @@ WXML的冒泡事件列表：
 
 ### 事件详情见 [链接]([事件 | 微信开放文档 (qq.com)](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html))
 
-## 微信小程序
+## 初写微信小程序
 
 ### 去除自带顶部导航栏
 
@@ -272,3 +272,282 @@ WXML的冒泡事件列表：
 在微信小程序中，不识别`<br/>`等标签。
 如果文字中想要折行显示，可以使用`\n`替代`<br/>`。
 注意：使用`\n`的时候，一定是在`<text>`标签内，如果在`<view>`标签中，`\n`并没有折行左右，只是显示一个空格。
+
+### 路由传参常用方式有以下几种
+
+#### 通过url传参
+
+ 
+
+```js
+// 产品列表页面
+ <navigator url="/pages/detail/detail?productId=12345" hover-class="navigator-hover">详情</navigator>
+
+// 或者
+wx.navigateTo({
+  url: '/pages/detail/detail?productId=12345'
+})
+```
+
+```js
+// 产品详情页面
+Page({
+  onLoad: function(option){
+    let productId = option.productId;
+    console.log(productId);
+  }
+})
+```
+
+上面的方式的参数不能是对象,如果需要传对象,可以将对象转成json字符串,然后拼接到url后面,在接收页面再将json字符串转成对象
+
+```js
+let info = {
+ a:2,
+ b:3
+}
+let infoStr = JSON.stringfy(info);
+wx.navigateTo({
+  url: '/pages/detail/detail?infoStr='+infoStr
+})
+```
+
+```js
+// 产品详情页面
+Page({
+  onLoad: function(option){
+    let infoStr = option.infoStr;
+    let info = JSON.parse(infoStr);
+  }
+})
+```
+
+#### 通过事件传参
+
+官网例子
+
+```js
+// 产品列表页
+wx.navigateTo({
+  url: url: '/pages/detail/detail'
+  events: {
+    // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+    acceptDataFromOpenedPage: function(data) {
+      console.log(data)
+    },
+    someEvent: function(data) {
+      console.log(data)
+    }
+    ...
+  },
+  success: function(res) {
+    // 通过eventChannel向被打开页面传送数据
+    res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
+  }
+})
+```
+
+```js
+// 产品详情页
+Page({
+  onLoad: function(option){
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'});
+    eventChannel.emit('someEvent', {data: 'test'});
+    // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
+      console.log(data)
+    })
+  }
+})
+```
+
+简化例子以上例子,在跳转的时候列表页可以向详情页传数据,详情页也可以向列表页传数据,平时我们经常都只是传数据,很少需要回传,以下是简化的例子
+
+```js
+// 列表页
+wx.navigateTo({
+  url: "/pages/home/detail/detail",
+  success: function(res) {
+    // 通过eventChannel向被打开页面传送数据
+    let data = {productId: 'sadf2323',productName:'金龙鱼花生油'};
+    res.eventChannel.emit("info", data);
+  }
+});
+```
+
+```js
+// 详情页
+onLoad: function(options) {
+  const eventChannel = this.getOpenerEventChannel();
+  // 监听info事件，获取上一页面通过eventChannel传送到当前页面的数据
+  eventChannel.on("info", function(data) {
+     console.log(data);
+  });
+},
+```
+
+总结: 路由传参可以用这两种方式
+
+1. 通过url拼接参数传输,需要传对象,需要传对象就先讲对象转成json字符串再传
+2. 通过eventChannel(事件通道)进行传输(可以传对象)
+
+### getApp() 方法
+
+小程序提供了全局的 getApp() 方法，可获取当前小程序实例，一般用于在子页面中获取顶层应用。
+
+```js
+// app.js
+App({
+  globalData: 1
+});
+```
+
+```js
+// page.js
+var app = getApp();
+console.log(app.globalData); // 获取 globalData
+```
+
+### 缓存
+
+#### 写入
+
+```bash
+wx.setStorageSync('password', password);
+
+wx.setStorageSync('mobile', mobile);
+```
+
+#### 缓存读取、移除、清除所有
+
+```csharp
+var mobile = wx.getStorageSync('mobile');
+
+wx.removeStorageSync('mobile');
+
+wx.clearStorage();
+```
+
+### 提示信息和弹框
+
+有icon时最多显示7个字，icon为none时可显示全部信息。
+
+```js
+wx.showToast({
+  title: '登录成功',
+  success: function () {
+    setTimeout(function () {
+      //要延时执行的代码
+     //跳转到成功页面
+      wx.switchTab({
+        url: '../index/index'
+      })
+    }, 2000) //延迟时间
+  }
+})
+```
+
+### 模态框，确认取消对话框
+
+```js
+wx.showModal({
+  title: '确认',
+  content: '确认提交订单',
+    success: function (res) {
+      if (res.confirm) {
+        console.log('确定')
+     }else{
+        console.log(取消')
+     }
+  }
+})
+```
+
+### 修改单选多选框的样式	
+
+微信小程序原始默认样式如下：
+
+![](./wx/1.png)
+
+更改后样式：
+
+![](./wx/2.png)
+
+ 
+
+wxss代码：
+
+```css
+// radio样式
+radio .wx-radio-input {
+  width: 30rpx;
+  height: 30rpx;
+  border: 2rpx solid #b3b3b3;// 外圈边框，未选中状态默认灰色
+  border-radius: 50%;
+  background: none;
+}
+//radio选中后内部样式
+radio .wx-radio-input.wx-radio-input-checked {
+  border: 2rpx solid #15e0a2 !important;// 选中状态外圈边框颜色
+  background-color: white !important;// 外圈边框与内圈实心圆间的内容的颜色，默认上边的绿色
+}
+//radio选中后内部中心
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 60%;
+  height: 60%;
+  background: #15e0a2;// 内圈实心圆选中颜色
+  border-radius: 50%;
+  content: '';// 隐藏✔️
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+//checkbox 选项框大小  
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+}
+//checkbox选中后样式  
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #15e0a2;
+  border: 1rpx solid #15e0a2 !important; //选中后多选框边框颜色
+}
+//checkbox选中后图标样式  
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+```
+
+### 单选多选框点击时有灰色背景色
+
+`.weui-check__label {background-color: rgba(0, 0, 0, 0) !important;}`
+
+### 小程序checkbox调整大小
+
+`.cb{  transform: scale(0.6,0.6); }`
+
+**多选单勋框如果点击是上下抖动可能是因为高度原因**
+
+### 微信小程序\文本框\失去\对焦触发\事件
+
+bindinput：输入一个字节一触发
+bindblur：离开文本框时出发
+
+### 返回上一个页面
+
+```js
+goBack(){
+    wx.navigateBack({
+      delta: 1  
+    })
+  },
+```
+
