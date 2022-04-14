@@ -1,6 +1,7 @@
 ---
 title: js函数封装
 abbrlink: cf102fe0
+cover: /img/bgc.jpg
 tags:
     - [封装] 
     - [JS] 

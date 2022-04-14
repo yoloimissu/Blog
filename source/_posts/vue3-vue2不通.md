@@ -1,6 +1,7 @@
 ---
 title: vue3-vue2
 abbrlink: 2f025768
+cover: /img/bga.jpg
 date: 2022-04-02 14:14:15
 tags:
     - [vue3]

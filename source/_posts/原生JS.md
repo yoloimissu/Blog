@@ -1,6 +1,7 @@
 ---
 title: 原生js
 abbrlink: 17c7b154
+cover: /img/bgc.jpg
 date: 2022-04-01 16:00:19
 tags:
     - [js]
@@ -392,5 +393,48 @@ var copy2 = box.cloneNode(true);
         //    console.log('hello')
        // };
     </script>
+```
+
+### offsetHeight、scrollHeight、clientHeight的区别
+
+- offsetHeight = 内容高度 + padding + border
+- clientheight = 内容高度 + padding
+- scrollHeight = 内容实际尺寸 + padding
+
+```html
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin: 30px;
+    border: 5px solid yellow;
+    box-sizing: border-box;
+    background-color: #ccc;
+  }
+  .box4 {
+    overflow: auto;
+  }
+</style>
+<body>
+  <div class="box1 box">盒子1</div>
+  <div class="box2 box">盒子2</div>
+  <div class="box3 box">盒子3</div>
+  <div class="box4 box">
+    <div style="height: 300px;">盒子4</div>
+  </div>
+
+</body>
+<script>
+  const box1 = document.querySelector(".box1");
+  const box2 = document.querySelector(".box2");
+  const box3 = document.querySelector(".box3");
+  const box4 = document.querySelector(".box4");
+  console.log("盒子1的offsetHeight", box1.offsetHeight); //100
+  console.log("盒子2的clientHeight", box2.clientHeight);//90
+  console.log("盒子3的scrollHeight", box3.scrollHeight);//90
+  console.log("盒子3的scrollHeight", box4.scrollHeight);//340
+</script>
+
 ```
 

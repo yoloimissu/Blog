@@ -1,6 +1,7 @@
 ---
 title: vue小知识
 abbrlink: '78072e01'
+cover: /img/bge.jpg
 tags:
     - [vue]
     - [配置]

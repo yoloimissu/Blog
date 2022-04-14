@@ -1,6 +1,7 @@
 ---
 title: css样式
 abbrlink: 78cea6d8
+cover: /img/bgj.jpg
 date: 2022-04-01 16:17:28
 tags: 
     - [css]

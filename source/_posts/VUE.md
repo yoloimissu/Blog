@@ -1,6 +1,7 @@
 ---
 title: VUE
 abbrlink: 560a971e
+cover: /img/bgj.jpg
 date: 2022-04-01 17:27:46
 tags:
     - [vue]

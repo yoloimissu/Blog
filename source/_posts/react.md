@@ -1,6 +1,7 @@
 ---
 title: React
 abbrlink: 19656fd5
+cover: /img/bgg.jpg
 date: 2022-04-01 18:03:06
 tags:
     - [react]

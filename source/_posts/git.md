@@ -1,6 +1,7 @@
 ---
 title: git
 abbrlink: 518e617c
+cover: /img/bga.jpg
 date: 2022-04-01 15:57:22
 tags:
     - [git]

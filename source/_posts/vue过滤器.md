@@ -1,6 +1,7 @@
 ---
 title: vue过滤器
 abbrlink: 7934a770
+cover: /img/bgb.jpg
 tags:
     - [vue]
     - [封装]

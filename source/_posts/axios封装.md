@@ -1,13 +1,14 @@
 ---
 title: axios请求封装
 abbrlink: c88f0c02
+cover: /img/bgf.jpg
 tags: 
     - [vue]
     - [封装]
 categories:
     - [封装, axios]
 ---
-![目录](./axiosEncapsulation/目录.png)
+![目录](./img/目录.png)
 <!-- more -->
 ## config.js
 
