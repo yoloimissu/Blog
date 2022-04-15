@@ -1,16 +1,20 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3312153 */
-  src: url('//at.alicdn.com/t/font_3312153_dtwwy5h9ojm.woff2?t=1649388487036') format('woff2'),
-       url('//at.alicdn.com/t/font_3312153_dtwwy5h9ojm.woff?t=1649388487036') format('woff'),
-       url('//at.alicdn.com/t/font_3312153_dtwwy5h9ojm.ttf?t=1649388487036') format('truetype');
+  src: url('//at.alicdn.com/t/font_3312153_pgguqc6696.woff2?t=1650016775611') format('woff2'),
+       url('//at.alicdn.com/t/font_3312153_pgguqc6696.woff?t=1650016775611') format('woff'),
+       url('//at.alicdn.com/t/font_3312153_pgguqc6696.ttf?t=1650016775611') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 32px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lianjie:before {
+  content: "\e602";
 }
 
 .icon-xinlangweibo:before {
