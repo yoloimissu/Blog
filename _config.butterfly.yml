@@ -831,7 +831,7 @@ css_prefix: true
 inject:
   head: 
     #本地css
-    - <link rel="stylesheet" href="/css/custom.css" >
+    # - <link rel="stylesheet" href="/css/custom.css" >
     #线上css
     # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.2/custom.css" >
     # 图标
