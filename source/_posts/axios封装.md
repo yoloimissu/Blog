@@ -1,7 +1,7 @@
 ---
 title: axios请求封装
 abbrlink: c88f0c02
-cover: /img/bgf.jpg
+cover: /img/bgi.jpg
 tags: 
     - [vue]
     - [封装]

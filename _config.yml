@@ -131,8 +131,17 @@ live2d:
     show: true
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
+# deploy:
+#  - type: git
+#    repo: git@gitee.com:yslin1126/yslin1126.git
+#    branch: master
+# - type: git
+#    repo: git@github.com:yoloimissu/yoloimissu.git
+#    branch: master
 deploy:
-  type: git
-  # repo: https://gitee.com/yslin1126/yslin1126.git    #替换成你自己仓库的HTTP URL地址
-  repo: git@gitee.com:yslin1126/yslin1126.git
-  branch: master
+  - type: git
+    repo: git@gitee.com:yslin1126/yslin1126.git
+    branch: master
+  # - type: git
+  #   repo: git@github.com:yoloimissu/yoloimissu.github.io.git
+  #   branch: main

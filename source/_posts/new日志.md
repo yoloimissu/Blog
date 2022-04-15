@@ -1,6 +1,6 @@
 ---
 title: new日志
-cover: /img/bgd.jpg
+cover: /img/bgc.jpg
 abbrlink: b8fd4291
 date: 2022-04-14 15:08:56
 tags:

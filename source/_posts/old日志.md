@@ -1,7 +1,7 @@
 ---
 title: 日志
 abbrlink: '21892891'
-cover: /img/bgf.jpg
+cover: /img/bge.jpg
 date: 2022-04-01 17:20:40
 tags:
     - [日志]

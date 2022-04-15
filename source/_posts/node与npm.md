@@ -1,7 +1,7 @@
 ---
 title: node与npm
 abbrlink: 8s88rrt
-cover: /img/bge.jpg
+cover: /img/bgd.jpg
 date: 2022-04-06 16:39:59
 tags:
 categories:

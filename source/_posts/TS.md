@@ -1,6 +1,6 @@
 ---
 title: TS
-cover: /img/bgh.jpg
+cover: /img/bgb.jpg
 abbrlink: 6d6c8ae1
 date: 2022-04-14 17:52:07
 tags:
@@ -9,7 +9,7 @@ categories:
 
 
 
-# 安装
+### 安装
 
 执行命令：
 
@@ -17,7 +17,7 @@ categories:
 npm install typescript -g
 ```
 
-# Hello World
+### Hello World
 
 本地新建文件`hello.ts`，开始写代码
 
@@ -26,19 +26,19 @@ function sayHelloWorld(person: string) {
     return name + ' hello world'
 }
 console.log(sayHelloWorld("Alice"))
-复制代码
+
 ```
 
 执行`tsc hello.ts`进行编译，会出现一个新的文件`hello.js`，此时我们执行如下命令：
 
 ```
 node hello.js
-复制代码
+
 ```
 
 正常输出 `Alice hello world`，成功！
 
-# tsconfig.json
+### tsconfig.json
 
 这个文件是`Ts`的编译选项配置文件生成tsconfig.json在项目根目录执行
 
@@ -101,33 +101,33 @@ tsc --init
 }
 ```
 
-# 数据类型
+### 数据类型
 
-### 布尔值
+#### 布尔值
 
 ```ts
 let isOk: boolean = true
-复制代码
+
 ```
 
-### 数值
+#### 数值
 
 ```ts
 let age: number = 18
 let notANumber: number = NaN
-复制代码
+
 ```
 
-### 字符串
+#### 字符串
 
 ```ts
 let name: string = "Alice"
 let age: number = 18
 let sentence: string = `I from China Beijing, my name is ${name}, age ${age}`
-复制代码
+
 ```
 
-### 空值
+#### 空值
 
 Js中没有`Void`的概念，Ts中可以用`void`表示没有任何返回值的函数：
 
@@ -135,10 +135,10 @@ Js中没有`Void`的概念，Ts中可以用`void`表示没有任何返回值的�
 function alertHello(): void {
     alert('hello')
 }
-复制代码
+
 ```
 
-### null & undefiled
+#### null & undefiled
 
 ```ts
 let u: undefined = undefined
@@ -152,14 +152,14 @@ let anyVar: any = '121'
 anyVar = true
 ```
 
-## 类型推论
+#### 类型推论
 
 如果你的变量没有赋值，那么`TypeScript`会看你后面的值是啥类型，那你这个变量就是啥类型
 
 ```ts
 let age = 12 // === let age: number = 12
 age = '12'
-复制代码
+
 ```
 
 抛出错误`不能将类型“string”分配给类型“number”。`
@@ -170,7 +170,7 @@ age = '12'
 let age;
 age = 1
 age = true
-复制代码
+
 ```
 
 这样完全Ok，并不会抛出错误，这样写类似于：
@@ -186,14 +186,14 @@ let isWhat: string | number | boolean;
 isWhat = '1'
 isWhat = 1
 isWhat = true
-复制代码
+
 ```
 
 完全Ok，但是如果这样：
 
 ```ts
 isWhat = [1,2,3]
-复制代码
+
 ```
 
 就会抛出错误`不能将类型“number[]”分配给类型“string | number | boolean”`
@@ -204,7 +204,7 @@ isWhat = [1,2,3]
 function getLength(something: string | number): number {
     return something.length
 }
-复制代码
+
 ```
 
 这样写就会抛出错误`类型“number”上不存在属性“length”。`，`length`不是他们的共有属性，所以会报错，改成这样：
@@ -213,14 +213,14 @@ function getLength(something: string | number): number {
 function getString(something: string | number): string {
     return something.toString()
 }
-复制代码
+
 ```
 
 完全Ok！
 
-## 接口
+#### 接口
 
-#### 基本定义
+##### 基本定义
 
 `interface`是对行为的抽象，举个🌰：
 
@@ -233,7 +233,7 @@ let alice: Person = {
     name: 'Alice',
     age: 18
 }
-复制代码
+
 ```
 
 上面的栗子，变量`alice`的结构必须与接口`Person`相一致，如果我们不写`age`，那么就会抛出错误`类型 "{ name: string; }" 中缺少属性 "age"，但类型 "Person" 中需要该属性。`
@@ -242,7 +242,7 @@ let alice: Person = {
 
 比如我们在变量`alice`添加属性`address`，那么就会抛出错误`不能将类型“{ name: string; age: number; address: string; }”分配给类型“Person”。\ 对象文字可以只指定已知属性，并且“address”不在类型“Person”中。`
 
-#### 可选属性
+##### 可选属性
 
 如果我们需要某个属性不是必须一致，那么可以这么做，继续用上面的栗子，假设`age`为不必要属性：
 
@@ -254,12 +254,12 @@ interface Person {
 let alice: Person = {
     name: 'Alice'
 }
-复制代码
+
 ```
 
 完全Ok
 
-#### 任意属性
+##### 任意属性
 
 如果我们需要在变量中定义一些我们将来可能会添加的属性，有极大的不确定性的话，比如我们想要新增一个`address`属性，那么我们可以这样：
 
@@ -274,12 +274,12 @@ let alice: Person = {
     address: 'China Beijing',
     gender: 0
 }
-复制代码
+
 ```
 
 完全OK!
 
-#### 只读属性
+##### 只读属性
 
 有时候我们需要一个属性不能再被修改，需要用到`readonly`定义属性，举个🌰
 
@@ -298,22 +298,22 @@ alice.id = 2
 // error: 无法分配到 "id" ，因为它是只读属性。
 ```
 
-# 数组
+### 数组
 
-## 基本定义
+#### 基本定义
 
 在TypeScript中，数组的定义如下：
 
 ```ts
 let fibonacci: number[] = [1,2,3,4,5]
-复制代码
+
 ```
 
 上面的🌰中，不允许出现除number以外的类型，比如：
 
 ```ts
 let fibonacci: number[] = [1,2,3, true]
-复制代码
+
 ```
 
 这样写会抛出异常`不能将类型“(number | boolean)[]”分配给类型“number”`
@@ -323,12 +323,12 @@ let fibonacci: number[] = [1,2,3, true]
 ```ts
 let fibonacci: number = [1,2,3,4]
 fibonacce.push(true)
-复制代码
+
 ```
 
 这样写也不行，会抛出错误`不能将类型“number[]”分配给类型“number”` && `不能将类型“number[]”分配给类型“number”`
 
-## 接口表示
+#### 接口表示
 
 举个🌰
 
@@ -337,14 +337,14 @@ interface NumberArray {
     [index: number]: number;
 }
 let fibonacce: NumberArray = [1,2,3,4]
-复制代码
+
 ```
 
 `NumberArray`：索引是数字时，值的类型必须用数字。
 
 一般不会用这个去定义一个数组。
 
-## 类数组
+#### 类数组
 
 类数组不能用数组定义的方式去赋值，举个🌰
 
@@ -352,7 +352,7 @@ let fibonacce: NumberArray = [1,2,3,4]
 function sum() {
     let args: number[] = arguments;
 }
-复制代码
+
 ```
 
 这样写会抛出错误`类型“IArguments”缺少类型“number[]”的以下属性: pop, push, concat, join 及其他 24 项`
@@ -363,7 +363,7 @@ function sum() {
 function sum() {
     let agrs: IArguments = arguments;
 }
-复制代码
+
 ```
 
 类型`IArguments`其实就是一个`interface`，是TypeScript内置的类型，相当于这样写：
@@ -374,25 +374,25 @@ interface IAgruments {
     length: number;
     callee: function;
 }
-复制代码
+
 ```
 
 除此之外，TypeScript中还有很多内置的类型，比如`NodeList`，`HTMLCollection`等
 
-## 数组 any
+#### 数组 any
 
 无限制的数组项，举个🌰
 
 ```ts
 let list: any[] = [1, '1', true, {name: '1'}, [3,4,5]]
-复制代码
+
 ```
 
 完全ok!
 
-# 函数
+### 函数
 
-## 基本定义
+#### 基本定义
 
 TypeScript中函数的定义如下：
 
@@ -400,16 +400,16 @@ TypeScript中函数的定义如下：
 function sum(x: number, y: number): number {
     return x + y
 }
-复制代码
+
 ```
 
-## 函数表达式
+#### 函数表达式
 
 ```ts
 let sum = function(x: number, y: nunmber): number {
     return x + y
 }
-复制代码
+
 ```
 
 sum并没有类型的定义，可以给sum也加一个定义：
@@ -418,7 +418,7 @@ sum并没有类型的定义，可以给sum也加一个定义：
 let sum: (x: number, y: number) => number = function(x: number, y: number): number {
     return x + y
 }
-复制代码
+
 ```
 
 上面所有的定义中，函数的参数都是必传的，不能少，也不能多，比如这样：
@@ -429,7 +429,7 @@ let sum: (x: number, y: number) => number = function(x: number, y: number): numb
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a311de2657534931bbcfb04eb092086f~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-## 可选参数
+#### 可选参数
 
 与接口中的可选属性类似，用`?`表示，举个🌰：
 
@@ -444,14 +444,14 @@ let buildName: (f: string, l?: string) => string = function (
 
 console.log(buildName("Alice"));
 console.log(buildName("Alice", "Yan"));
-复制代码
+
 ```
 
 需要注意的是，可选参数必须在最后面，也就是说，可选参数的后面，不能再接必需参数，像这样就不行：
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2535b3fa07594976a0f9fb021089d354~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-## 参数默认值
+#### 参数默认值
 
 TypeScript会将添加了默认值的参数自动设置为可选参数，举个🌰
 
@@ -460,12 +460,12 @@ function buildName(firstName: string, lastName: string = 'Yan'): string {
     return firstName + ' ' + lastName
 }
 console.log(buildName('Alice'))
-复制代码
+
 ```
 
 此时就不受「可选参数必须在必须参数后面」的限制了
 
-## 剩余参数
+#### 剩余参数
 
 `...rest`获取剩余参数
 
@@ -473,20 +473,20 @@ console.log(buildName('Alice'))
 function push(array: any[], ...items: any[]) {
     items.forEach( item => array.push(item))
 }
-复制代码
+
 ```
 
-# 类型断言
+### 类型断言
 
 用于手动指定一个值的类型
 
-## 基本语法
+#### 基本语法
 
 （推荐）
 
 ```ts
 值 as 类型
-复制代码
+
 ```
 
 or
@@ -495,12 +495,12 @@ or
 
 ```ts
 <类型> 值
-复制代码
+
 ```
 
-## 用途
+#### 用途
 
-### 将一个联合类型断言为其中一个类型
+##### 将一个联合类型断言为其中一个类型
 
 TypeScript不确定一个联合类型的变量到底属于哪个类型的时候，只能访问此联合类型的所有类型中共有的属性或方法，比如之前说的`string` | `number` 访问`toString`，再举个栗子：
 
@@ -518,7 +518,7 @@ interface Fish {
 function getName(animal: Dog | Fish) {
     return animal.name
 }
-复制代码
+
 ```
 
 有时候，我们确实需要在还不确定类型的时候就访问其中一个类型特有的属性或方法，举个栗子：
@@ -536,7 +536,7 @@ function isFish(animal: Dog | Fish) {
     if( typeof animal.swim === 'function' ) return true
     return false
 }
-复制代码
+
 ```
 
 上面这个栗子就会抛出错误`类型“Dog | Fish”上不存在属性“swim”`
@@ -557,7 +557,7 @@ function isFish(animal: Dog | Fish): boolean {
     if(typeof (animal as Fish).swim === 'function') return true
     return false
 }
-复制代码
+
 ```
 
 📢注意： 类型断言只能够【欺骗】TypeScript编译器，无法避免运行时的错误，滥用类型断言可能会导致运行错误，举个栗子：
@@ -580,12 +580,12 @@ const tony: Dog = {
 }
 
 swim(tony)
-复制代码
+
 ```
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eb8d59054c6143318387a4313b8e3bff~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-### 将一个父类断言为更加具体的子类
+##### 将一个父类断言为更加具体的子类
 
 当类之间有继承关系时，类型断言也是很常见，举个栗子：
 
@@ -604,17 +604,17 @@ function isApiError(error: Error) {
 }
 
 这个栗子中，声明了函数`isApiError`，用来判断传入的参数是不是`ApiError`类，但是由于父类`Error`中并没有`code`这个属性，所以直接使用就会报错，就要使用`as`进行`类型断言`
-复制代码
+
 ```
 
-### 将任何一个类型断言为`any`
+##### 将任何一个类型断言为`any`
 
 这其实就是有一点不靠谱了，咱就是整个就是说你定义一个类型是`number`，但是如果你又觉得他好像不是`number`，那你可以把他再断言成`any`，举个栗子：
 
 ```ts
 const foo: number = 1
 foo.length = 1
-复制代码
+
 ```
 
 这样写是不能通过编译的，因为`foo`是`number`类型，是没有`length`属性的，所以TypeScript给了提示`类型“number”上不存在属性“length”。`，这种提示非常有效！
@@ -623,19 +623,19 @@ foo.length = 1
 
 ```ts
 window.foo = 1
-复制代码
+
 ```
 
 在js中，这种写法完全ok，给`window`添加属性`foo`，值为`1`，但是，在TypeScript中是不支持的，它会抛出这个错误`类型“Window & typeof globalThis”上不存在属性“foo”。`，这时候我们就可以用类型断言，把`window`断言成`any`，`any`类型上，访问任何属性都是允许的，像这样：
 
 ```ts
 (window as any).foo = 1
-复制代码
+
 ```
 
 ok
 
-### 将any断言成任何一种类型
+##### 将any断言成任何一种类型
 
 举个栗子：
 
@@ -643,7 +643,7 @@ ok
 function getCacheData(key: string): any {
     return (window as any).cache[key]
 }
-复制代码
+
 ```
 
 上面的例子中，`getCacheData`返回的类型是any，我们不确定他到底返回的是什么类型，所以当我们使用这个function的时候，我们可以根据自己的需要，对他的返回值进行断言，举个栗子：
@@ -655,10 +655,10 @@ interface Cat {
 }
 const tom = getCacheData('tom') as Cat;
 tom.run()
-复制代码
+
 ```
 
-### 断言包含
+#### 断言包含
 
 并不是所有的类型都能够相互断言，只有`A`包含`B`的所有属性，或者`B`包含`A`的所有属性，`A`和`B`才能相互断言，举个栗子：
 
@@ -682,7 +682,7 @@ let tom: Cat = {
 let anmimal: Animal = tom;
 tom.run();
 (anmimal as Cat).run();
-复制代码
+
 ```
 
 如果我们加一个新的interface:
@@ -694,12 +694,12 @@ let coffeeCup: Cup = {
 };
 
 let anmimalCup: Animal = coffeeCup;
-复制代码
+
 ```
 
 就会抛出错误`类型 "Cup" 中缺少属性 "name"，但类型 "Animal" 中需要该属性。`
 
-## 总结
+#### 总结
 
 类型断言的用途：
 
@@ -709,7 +709,7 @@ let anmimalCup: Animal = coffeeCup;
 - any可以断言成任何类型
 - `A`包含`B`的所有属性，或者`B`包含`A`的所有属性，`A`和`B`才能相互断言
 
-## 双重断言
+#### 双重断言
 
 双重断言意味着打破 「`A`包含`B`的所有属性，或者`B`包含`A`的所有属性，`A`和`B`才能相互断言」的规则，举个栗子：
 
@@ -732,21 +732,21 @@ let tom: Cat = {
 };
 
 testCat(tom);
-复制代码
+
 ```
 
-# 声明
+### 声明
 
-## declare var
+#### declare var
 
 声明全局变量
 
 ```ts
 declare var username: string;
-复制代码
+
 ```
 
-## declare function
+#### declare function
 
 定义全局函数
 
@@ -754,7 +754,7 @@ declare var username: string;
 declare function getToken(key: string): string
 ```
 
-# 类型别名
+#### 类型别名
 
 类型别名顾名思义，即字面意思，其实`断言`也是字面意思，就是断定类型的方法，你说是什么类型就是什么类型，推翻约定，扯远了，继续说`类型别名`，举个🌰吧：
 
@@ -769,12 +769,12 @@ function getName(n: NameOrResolver): Name {
         reutrn n()
     }
 }
-复制代码
+
 ```
 
 类型`Name`其实就是`string`的别名，类型`() => string`，一个函数返回一个字符串，这种格式就是类型`NameResolver`，`NameOrResolver`是一个联合类型，之前说过。
 
-# 字符串字面量类型
+#### 字符串字面量类型
 
 字符串字面量类型，用来约束取值职能是`某几个字符串`其中的一个字符串，举个🌰：
 
@@ -786,16 +786,16 @@ function handleEvent(ele: Element, event: EventSupport): void {
 
 handleEvent(document.getElementById('app'), 'scroll') // 完全ok
 handleEvent(document.getElementById('app'), 'dbclick') // 完全不ok
-复制代码
+
 ```
 
-# 元组（Tuple）
+### 元组（Tuple）
 
 元组用来合并不同类型的项，举个🌰：
 
 ```ts
 let tom: [string,number] = ['tom', 25]
-复制代码
+
 ```
 
 注意：
@@ -806,13 +806,13 @@ let tom: [string,number] = ['tom', 25]
 
 .. 元组不是很好用，如果你真的不确定你的`[]`里有啥，其实最好就用`let tom: any[] = ['tom', 12]`
 
-# 枚举（Enum）
+### 枚举（Enum）
 
 枚举一般用来做映射，举个栗子：
 
 ```ts
 enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat}
-复制代码
+
 ```
 
 上面这段Ts编译成Js是这样：
@@ -828,7 +828,7 @@ var Days;
     Days[Days["Fri"] = 5] = "Fri";
     Days[Days["Sat"] = 6] = "Sat";
 })(Days || (Days = {}));
-复制代码
+
 ```
 
 枚举成员会被赋值为从0开始递增的数字，同事也会对枚举值到枚举名进行反向映射：
@@ -836,10 +836,10 @@ var Days;
 ```ts
 console.log(Days[0]); // Sun
 console.log(Days["Sun"]) // 0
-复制代码
+
 ```
 
-## 自定义枚举
+#### 自定义枚举
 
 ```ts
 enum Days {
@@ -852,54 +852,54 @@ enum Days {
   Sat = <any>"Sat",
 }
 console.log(Days["Sun"]); // Sun
-复制代码
+
 ```
 
 注意：这儿需要使用断言，让tsc无视类型检查
 
-# 类
+### 类
 
 其实在JS在ES6发布之前从来都没有类的概念，都是通过构造函数去模拟类，ES6发布了class，但是大部分Js程序员对类的概念还是比较模糊的，这我解释一下什么是类、对象、OOP、封装、集成、多态、修饰符、抽象类、接口
 
-## 类的概念
+#### 类的概念
 
-`类`其实可以理解为一件事物的抽象，包含了这个事务的一些属性与方法举个简单的🌰，比如人，人就是一个大类，我们可以抽象出来他的一些特点，比如：`唱`、`跳`这是人的行为，`智商`、`情商`、`性别`等是人的属性。
+类`其实可以理解为一件事物的抽象，包含了这个事务的一些属性与方法举个简单的🌰，比如人，人就是一个大类，我们可以抽象出来他的一些特点，比如：`唱`、`跳`这是人的行为，`智商`、`情商`、`性别`等是人的属性。
 
-## 对象
+#### 对象
 
-`对象`其实就是类的实例化，`类`是一个抽象，`对象`就是让他变得现实，一个类可以实例化多个对象，类似我们可以根据`人`这个类，制造很多人。
+对象`其实就是类的实例化，`类`是一个抽象，`对象`就是让他变得现实，一个类可以实例化多个对象，类似我们可以根据`人`这个类，制造很多人。
 
-## 面向对象 OOP
+#### 面向对象 OOP
 
 面向对象开发的三大特性：封装、继承、多态
 
-### 封装
+##### 封装
 
-`封装`的意思就是我们知道的意思，我们需要通过一些代码实现一个函数，这个函数就是一个封装，再通俗一点说，我们需要实现`人`会`跳`这个方法，细节呢？我们只需要封装起来，比如先下蹲一点，双腿发力，向上用力等等，把这些细节封装起来，就可以直接调用这个方法进行`跳`，同时呢外界也不能直接去修改内部的数据。
+封装`的意思就是我们知道的意思，我们需要通过一些代码实现一个函数，这个函数就是一个封装，再通俗一点说，我们需要实现`人`会`跳`这个方法，细节呢？我们只需要封装起来，比如先下蹲一点，双腿发力，向上用力等等，把这些细节封装起来，就可以直接调用这个方法进行`跳`，同时呢外界也不能直接去修改内部的数据。
 
-### 继承
+##### 继承
 
 子承父业，儿子继承老爹的所有方法&属性，但除了拥有父类所有用的特性外，还有一些别具一格的特性。
 
-### 多态
+##### 多态
 
 由于继承产生了很多相关的不同类，很多儿子继承了同一个老爹，子类对同一个方法可以有不同的响应。比如`小王`和`小李`都继承老爹`老张`，但是分别实现了自己`getMoney`的方法，此时针对一个实例，我们无需了解他是`小王`还是`小李`，就可以直接调用`getMoney`方法，程序会自动判断出来应该如何执行`getMoney`。
 
-### 修饰符
+##### 修饰符
 
-修饰符是一些关键字，用于限定成员或者类型的性质，比如`public`表示公有属性or方法
+饰符是一些关键字，用于限定成员或者类型的性质，比如`public`表示公有属性or方法
 
-### 抽象类
+##### 抽象类
 
 抽象类是供其他类继承的`基类`，抽象类不允许被实例化，抽象类中的抽象方法必须在子类中被实现
 
-### 接口
+##### 接口
 
 不同类之间共有的属性和方法，可以抽象成一个接口，接口可以被类实现，一个类职能继承自另外一个类，但是可以实现多个接口。
 
-## ES6中类的用法
+#### ES6中类的用法
 
-### 类的定义
+##### 类的定义
 
 使用`class`定义类，使用`constructor`定义构造函数，通过`new`生成新实例的时候，会自动调用构造函数。
 
@@ -917,10 +917,10 @@ class Person {
 }
 let alice = new Person("Alice", 120)
 console.log(alice.saySomething())
-复制代码
+
 ```
 
-### 类的继承
+##### 类的继承
 
 现在有了人的类，我们现在实现一个`Cop`类，`Cop`也属于人，也有名字&IQ，子类中用`super`关键字来调用父类的构造函数与方法：
 
@@ -937,10 +937,10 @@ class Cop extends Person {
 }
 let tom = new Cup('tom', 100, 'cop')
 console.log(tom.saySomething())
-复制代码
+
 ```
 
-### 存取器
+##### 存取器
 
 使用 getter 和 setter可以改变属性的赋值和读取行为：
 
@@ -960,10 +960,10 @@ class FakerCop extends Person {
 let tony = new FakerCop("Tony", 200, 'fakerCop');
 tony.job = 'realCop'
 console.log(tony.job) // fakerCop
-复制代码
+
 ```
 
-### 静态方法
+##### 静态方法
 
 使用`static`修饰符修饰的方法成为静态方法，不需要被实例化，直接通过类来调用，举个🌰，定义一个判断真假cop的方法：
 
@@ -984,12 +984,12 @@ class Cop extends Person {
 
 console.log(Cop.isCop(tom)) // true
 console.log(Cop.isCop(tony)) // false
-复制代码
+
 ```
 
-## TypeScript中类的用法
+#### TypeScript中类的用法
 
-### public private protected
+##### public private protected
 
 - `public` 修饰的属性或者方法是公有的，可以在任何地方被访问，默认所有的方法和属性都是`public`
 - `private` 修饰的属性或者方法是私有的，不能再声明他的类的外部访问
@@ -1009,7 +1009,7 @@ let a = new Animal('Jack')
 console.log(a.name) // Jack
 a.name = 'Tom'
 console.log(a.name) // Tom
-复制代码
+
 ```
 
 `private` 举个栗子：
@@ -1024,7 +1024,7 @@ class Animal {
 let a = new Animal('Jack')
 console.log(a.name)
 a.name = 'Tom'
-复制代码
+
 ```
 
 ts 会提示`属性“name”为私有属性，只能在类“Animal”中访问。`
@@ -1048,7 +1048,7 @@ class Cat extends Animal {
         console.log(this.name)
     }
 }
-复制代码
+
 ```
 
 子类可以访问父类的`protected`属性
@@ -1070,12 +1070,12 @@ class Cat extends Animal {
 }
 
 let a = new Animal('Jack')
-复制代码
+
 ```
 
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/88ca6b42933548998c6f945fca588c25~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-### 参数属性
+##### 参数属性
 
 修饰符和`readonly`还可以在构造函数参数中使用，等同于类中定义该属性同时给该属性赋值，代码看上去会更简洁：
 
@@ -1086,10 +1086,10 @@ class Animal {
         // this.name = name
     }
 }
-复制代码
+
 ```
 
-### readonly
+##### readonly
 
 只读关键字
 
@@ -1102,7 +1102,7 @@ class Animal {
 let a = new Animal('Jack')
 console.log(a.name)
 a.name = 'Tony' // Error
-复制代码
+
 ```
 
 ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9e12c4bfed14499e830244d88a7d2d09~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
@@ -1113,10 +1113,10 @@ a.name = 'Tony' // Error
 class Animal {
     public constructor(public readonly name: string) {}
 }
-复制代码
+
 ```
 
-## 抽象类
+#### 抽象类
 
 `abstract` 用于定义抽象类和其中的抽象方法，首先抽象类不允许被实例化，举个栗子：
 
@@ -1126,7 +1126,7 @@ abstract class Animal {
     public abstract sayHi(): void;
 }
 let a = new Animal('jack')
-复制代码
+
 ```
 
 抛出错误：
@@ -1141,7 +1141,7 @@ class Cat extends Animal {
         console.log()
     }
 }
-复制代码
+
 ```
 
 如果不实现`sayHi`方法，就会抛出错误
@@ -1168,12 +1168,10 @@ class Cat extends Animal {
 let c = new Cat("Jack");
 c.eat();
 c.sayHi();
-复制代码
+
 ```
 
-## 类的类型
-
-很简单
+#### 类的类型
 
 ```ts
 class Animal {
@@ -1184,14 +1182,14 @@ class Animal {
 }
 
 let a: Animal = new Animal("Jack");
-复制代码
+
 ```
 
-# 泛型
+### 泛型
 
 泛型是指在定义函数、接口、类的时候，不预先指定具体类型，而在使用的时候再指定类型的一种特性。
 
-## 基本定义
+#### 基本定义
 
 我们实现一个 `createArray`函数，他可以创建一个指定长度的数组，同事将每一项都填充一个默认值：
 
@@ -1203,7 +1201,7 @@ function createArray(length: number, value: any): Array<any> {
     }
     return result
 }
-复制代码
+
 ```
 
 上面我们用到的是`数组泛型`，但是`any`还是有点不妥，我们希望与 `value`的类型相同，但是我们并不知道`value`是什么类型，这时候`泛型`就起作用了：
@@ -1217,7 +1215,7 @@ function createArray<T>(length: number, value: T): Array<T> {
     return result
 }
 createArray<string>(3, 'x')
-复制代码
+
 ```
 
 上面的栗子里，我们在函数名后面添加了`<T>`，其中`T`用来指代任意输入的类型，在后面输入`value: T`和输出`Array<T>`中即可使用了。
@@ -1226,10 +1224,10 @@ createArray<string>(3, 'x')
 
 ```ts
 createArray(3, 'x')
-复制代码
+
 ```
 
-## 多个类型参数
+#### 多个类型参数
 
 定义泛型的时候，可以一次定义多个类型参数：
 
@@ -1238,10 +1236,10 @@ function swap<T, U>(tup;e: [T, U]): [T, U] {
     return [tuple[1], tuple[0]]
 }
 swap([7, 'seven']) // ['seven', 7]
-复制代码
+
 ```
 
-## 泛型约束
+#### 泛型约束
 
 函数内部使用泛型变量的时候，我们可能不知道它到底是那种类型，所以不能随意的操作他的属性或者方法：
 
@@ -1250,7 +1248,7 @@ function loggingIdentity<T>(arg: T): T {
     console.log(arg.length)
     return arg
 }
-复制代码
+
 ```
 
 这样写会抛出错误：
@@ -1267,7 +1265,7 @@ function loggintIdentity<T extends lengthwise>(agr: T): T {
     console.log(agr.length)
     return arg
 }
-复制代码
+
 ```
 
 这个时候如果你调用`loggintIdentity`传入的值没有`length`属性，那么会抛出错误
@@ -1287,7 +1285,7 @@ function copyFields<T extends U, U>(target: T, source: U): T {
 }
 let x = { a: 1, b: 2, c: 3, d: 4 };
 console.log(copyFields(x, { b: 10, d: 20 }));
-复制代码
+
 ```
 
 这块可能有同学看不懂`target[key] = (<T>source)[key]`是啥意思了，我在这解释一下：
@@ -1300,7 +1298,7 @@ console.log(copyFields(x, { b: 10, d: 20 }));
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/638dfc882d404d6a87cc67a14f4af2e9~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-## 泛型接口
+#### 泛型接口
 
 接口可以约定一个函数的形状：
 
@@ -1312,7 +1310,7 @@ let mySearch: SearchFunc;
 mySearch = function (source: string, substring: string) {
     return source.search(subString) !== -1
 }
-复制代码
+
 ```
 
 也可以使用有泛型的接口定义函数的形状：
@@ -1330,10 +1328,10 @@ createArray = function <T>(length: number, value: T): Array<T> {
   return result;
 };
 console.log(createArray(3, "x"));
-复制代码
+
 ```
 
-## 泛型参数的默认值
+#### 泛型参数的默认值
 
 ```ts
 interface CreateArrayFunc {

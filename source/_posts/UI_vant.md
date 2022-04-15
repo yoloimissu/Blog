@@ -1,7 +1,7 @@
 ---
 title: vant ui注意事项
 abbrlink: 145f76bc
-cover: /img/bgi.jpg
+cover: /img/bgj.jpg
 tags:
     - [vant]
     - [react]

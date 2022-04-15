@@ -1,7 +1,7 @@
 ---
 title: ios与安卓
 abbrlink: fb51240d
-cover: /img/bgb.jpg
+cover: /img/bgh.jpg
 tags: 
     - [ios]
 categories:
