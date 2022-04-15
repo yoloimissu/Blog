@@ -432,3 +432,31 @@ $ git revert [commit]
 $ git stash
 $ git stash pop
 ```
+
+
+
+## git同时提交到gitee和github
+
+.git文件夹下config
+
+按照顺序依次提交到两个地址直接push
+
+```
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = true
+[remote "origin"]
+        url = git@gitee.com:yslin1126/blog.git
+        url = git@github.com:yoloimissu/Blog.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+```
+
+
+
