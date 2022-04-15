@@ -8,3 +8,5 @@ live2d_models
 public
 
 .github
+package-lock.*
+yarn.*
