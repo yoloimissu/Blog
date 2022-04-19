@@ -4,9 +4,9 @@ abbrlink: 78cea6d8
 cover: /img/bgf.jpg
 date: 2022-04-01 16:17:28
 tags: 
-    - [css]
+    - [CSS]
 categories:
-    - [css]
+    - [CSS]
 ---
 
 ### 单行显示超出省略
@@ -104,4 +104,40 @@ rotate() ：通过指定的角度参数对原元素指定一个2D rotation（2D 
 四、扭曲skew
 
 扭曲skew和translate、scale一样同样具有三种情况：skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形），第一个参数是水平方向扭曲角度，第二个参数是垂直方向扭曲角度。其中第二个参数是可选参数，如果没有设置第二个参数，那么Y轴为0deg。同样是以元素中心为基点，我们也可以通过transform-origin来改变元素的基点位置。
+
+### 阴影
+
+#### 盒子阴影
+
+```css
+div {
+    width: 200px;
+    height: 200px;
+    border: 10px solid red;
+    /* box-shadow: 5px 5px 3px 4px rgba(0, 0, 0, .4);  */
+    /* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */
+    box-shadow: 0 15px 30px  rgba(0, 0, 0, .4);
+}
+```
+
+| 值       | 描述                                   |
+| :------- | :------------------------------------- |
+| h-shadow | 必需。水平阴景拍的位置。允许负值。     |
+| v-shadow | 必需。垂直阴景拍的位置。允许负值。     |
+| blur     | 可选。模糊距离。                       |
+| spread   | 可选。阴景的尺寸。                     |
+| color    | 可选。阴景的颜色。请参阅CSS颜色值。    |
+| inset    | 可选。将外部阴影(outset)改为内部阴影。 |
+
+#### 文字阴影
+
+：text-shadow: 水平偏移量 垂直偏移量 模糊度 颜色
+
+### box:hover img和.box img:hover的区别
+
+.box:hover img：意思为鼠标经过.box里面的img发生变化
+
+.box img:hover：意思为经过box里面的img时发生变化
+
+
 

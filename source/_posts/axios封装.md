@@ -8,7 +8,7 @@ tags:
 categories:
     - [封装, axios]
 ---
-![目录](./img/目录.png)
+![](https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.1/image/目录.png)
 <!-- more -->
 ## config.js
 

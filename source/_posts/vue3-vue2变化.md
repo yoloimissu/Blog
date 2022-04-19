@@ -1,5 +1,5 @@
 ---
-title: vue3-vue2
+title: vue3-vue2变化
 abbrlink: 2f025768
 cover: /img/bgb.jpg
 date: 2022-04-02 14:14:15

@@ -635,7 +635,7 @@ aside:
       text: Follow Me
       link: https://github.com/xxxxxx
   card_announcement:
-    enable: true
+    enable: false
     content: 一个前端小白的第一个博客 
   card_recent_post:
     enable: true
@@ -653,7 +653,7 @@ aside:
     color: true
     sort_order: # Don't modify the setting unless you know how it works
   card_archives:
-    enable: true
+    enable: false
     type: monthly # yearly or monthly
     format: MMMM YYYY # eg: YYYY年MM月
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -664,6 +664,8 @@ aside:
     post_count: true
     last_push_date: true
     sort_order: # Don't modify the setting unless you know how it works
+  caed_poetry:
+    enable:true
 
 # busuanzi count for PV / UV in site
 # 訪問人數
@@ -834,7 +836,7 @@ inject:
     #本地css
     # - <link rel="stylesheet" href="/css/custom.css" >
     #线上css
-    # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.2/custom.css" >
+    # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.1/custom.css" >
     # 图标
     - <link rel="stylesheet" href="/css/icon.css" >
     # - <link rel="stylesheet" href="/xxx.css">
