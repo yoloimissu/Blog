@@ -10,6 +10,9 @@ categories:
     - [封装, 函数]
     - [vue]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 # 过滤器的封装
 
 ## filters.js

@@ -5,7 +5,7 @@
 # Site
 title: YOLO IMISSU !
 subtitle: ''
-description: ''
+description: <span id="jinrishici-sentence"></span>
 keywords:
 author: YOLO
 language: zh-CN

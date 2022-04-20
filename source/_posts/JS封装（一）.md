@@ -10,6 +10,9 @@ categories:
     - [js]
     - [封装, 函数]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 ### 数组去重
 
 ```js

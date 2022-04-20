@@ -8,6 +8,9 @@ tags:
 categories:
     - [封装, axios]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 ![](https://cdn.jsdelivr.net/gh/yoloimissu/asset@v0.0.1/image/目录.png)
 <!-- more -->
 ## config.js

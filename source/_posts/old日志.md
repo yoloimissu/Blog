@@ -8,6 +8,8 @@ tags:
 categories:
     - [日志]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 ## 20210810
 

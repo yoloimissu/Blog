@@ -8,6 +8,8 @@ categories:
 abbrlink: cdb50069
 date: 2022-04-19 10:34:00
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 ### 类型断言
 

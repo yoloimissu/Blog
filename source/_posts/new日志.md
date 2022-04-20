@@ -11,6 +11,9 @@ categories:
     - [CSS]
     - [日志]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 ### 添加蒙层自定义弹出模态框禁止底部滚动功能
 弹出时让最下面的盒子定位fixed
 

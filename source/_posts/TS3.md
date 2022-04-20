@@ -8,6 +8,8 @@ categories:
 abbrlink: bab230ff
 date: 2022-04-19 10:34:06
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 ### 类
 

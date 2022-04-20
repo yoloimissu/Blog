@@ -7,6 +7,9 @@ tags:
 categories:
     - [ios]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 - ios访问链接要使用尽量使用https
 - h5页面在IOS上点击input框放大的问题
 

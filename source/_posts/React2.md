@@ -8,6 +8,8 @@ tags:
 categories:
     - [react]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 #  React的生命周期
 

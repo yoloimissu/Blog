@@ -9,6 +9,9 @@ categories:
     - [vue]
 
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 ## Vue2.x 与 Vue3.0 的对比
 
 - Vue2 对 TypeScript 支持不友好，所有属性都放在 `this` 对象上，难以推断出数据类型。

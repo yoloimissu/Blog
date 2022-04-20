@@ -8,6 +8,10 @@ tags:
 categories:
     - [vue]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
+
 ## 样式穿透
 
 在项目中为了避免页面间样式污染常用scoped组件私有化，如果要改变element-ui或者vant的样式时需要用样式穿透才可复写样式。

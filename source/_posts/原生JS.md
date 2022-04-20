@@ -10,6 +10,8 @@ tags:
 categories:
     - [js]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 ### 函数（方法）对象
 

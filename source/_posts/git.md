@@ -8,6 +8,8 @@ tags:
 categories:
     - [git]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 ## git同时提交到gitee和github
 

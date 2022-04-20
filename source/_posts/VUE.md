@@ -8,6 +8,9 @@ tags:
 categories:
     - [vue]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
+
 ## 实现数组更新检测的方法
 
 

@@ -8,6 +8,8 @@ tags:
 categories:
     - [CSS]
 ---
+<p id="hitokotoText"></p>
+<p id="hitokotoFrom"></p>
 
 ### 单行显示超出省略
 
