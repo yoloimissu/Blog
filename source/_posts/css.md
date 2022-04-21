@@ -11,6 +11,32 @@ categories:
 <p id="hitokotoText"></p>
 <p id="hitokotoFrom"></p>
 
+### 去掉a标签下划线
+
+ text-decoration: none !important;
+
+### 鼠标悬浮样式
+
+cursor:default丨auto丨crosshair丨pointer丨move丨e-resize丨ne-resize丨nw-resize丨n-resize丨se-resize丨sw-resize丨s-resize丨w-resize丨text丨wait丨help丨
+<div id="cursorAPI" >
+  <div class="cursor-default">箭头</div>
+  <div class="cursor-auto">光标</div>
+  <div class="cursor-crosshair">十字线</div>
+  <div class="cursor-pointer">指示链接的指针</div>
+  <div class="cursor-move">指示某对象可被移动</div>
+  <div class="cursor-e-resize">指示矩形框的边缘可被向右</div>
+  <div class="cursor-ne-resize">指示矩形框的边缘可被向上及右移动</div>
+  <div class="cursor-nw-resize">显示矩形的边缘可被向上及向左移动</div>
+  <div class="cursor-n-resize">显示矩形的边缘可被向上及向上</div>
+  <div class="cursor-se-resize">显示矩形的边缘可被向上及向下向右移动</div>
+  <div class="cursor-sw-resize">显示矩形的边缘可被向上及向下及向左移动</div>
+  <div class="cursor-s-resize">显示矩形的边缘可被向下移动</div>
+  <div class="cursor-w-resize">显示矩形的边缘可被向左移动</div>
+  <div class="cursor-text">指文本</div>
+  <div class="cursor-wait">指示程序正忙</div>
+  <div class="cursor-help">指示可用的帮助</div>
+</div>
+
 ### 单行显示超出省略
 
 ```css

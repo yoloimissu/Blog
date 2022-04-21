@@ -1,8 +1,6 @@
-fetch('https://v1.hitokoto.cn')
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (data) {
+axios.get('https://v1.hitokoto.cn')
+  .then(res => {
+    let data = res.data
     var hitokotoText = document.getElementById('hitokotoText');
     var hitokotoFrom = document.getElementById('hitokotoFrom');
     hitokotoText.innerText = data.hitokoto;

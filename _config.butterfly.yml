@@ -5,10 +5,10 @@
 menu:
   首页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
-  接口测试: /test/ || fas fa-tags
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  # 列表||fas fa-list:
+  列表 || fas fa-list:
+    接口测试: /API/ || iconfont icon-jiekou
   #   音乐: /music/ || fas fa-music
   #   电影: /movies/ || fas fa-video
   # 链接: /link/ || fas fa-link
@@ -844,6 +844,7 @@ inject:
     - <link rel="stylesheet" href="/css/myCss.css" >
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
+    - <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     # - <script src="xxxx"></script>
     #引入今日诗词 eg：<span id="jinrishici-sentence"></span>
     - <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8""></script>
