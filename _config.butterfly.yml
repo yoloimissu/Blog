@@ -128,7 +128,7 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
     # 随机地址
-    - https://api.btstu.cn/sjbz/api.php?lx=suiji&format=images
+    # - //images.weserv.nl/?url=https://api.btstu.cn/sjbz/api.php?lx=suiji&format=images
     # - /img/bga.jpg
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
@@ -498,7 +498,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://www.dmoe.cc/random.php)
+background: url(//images.weserv.nl/?url=https://api.btstu.cn/sjbz/api.php?lx=suiji&format=images)
 
 # Footer Background
 footer_bg: true
@@ -902,7 +902,7 @@ CDN:
   canvas_ribbon:
   canvas_fluttering_ribbon:
   canvas_nest:
-    enable: true
+    enable: false
     color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to   separate.)
     opacity: 0.7 # the opacity of line (0~1), default: 0.5.
     zIndex: -1 # z-index property of the background, default: -1.

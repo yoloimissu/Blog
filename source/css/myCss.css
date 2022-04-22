@@ -8,12 +8,18 @@
   font-size: 18px;
   color: #708;
 }
-#man-a{
+.myButton{
   background-color: #efefef;
   border: 1px solid #666;
   color: #000 !important;
   padding: 1px 3px;
 }
+.mt20{
+  margin-top: 20px;
+};
+.ml20{
+  margin-left: 20px;
+};
 #man-a:hover{
   text-decoration: none !important;
 }
@@ -22,18 +28,46 @@
   flex-wrap: wrap;
 }
 
-.APIshow * {
+.APIshow >* {
   display: block;
   width: 300px;
   height: 300px;
 }
+.APIshow img{
+  width: 300;
+  height: auto;
+}
 
 .myBody>div {
   margin-top: 20px;
+}
+.yan p{
+  font-size: 20px
+};
 
+.myH1 {
+  font-weight: 700;
+  font-size: 24px;
 }
 
+.myH2 {
+  font-weight: 700;
+  font-size: 22px;
+}
 
+.txtc {
+  text-align: center;
+}
+p,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
 
 
 
