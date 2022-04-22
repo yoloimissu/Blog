@@ -17,7 +17,7 @@ categories:
 <div class="myBody">
   <div class="mandatory">
     <input type="text" id="man-input" placeholder="请输入QQ">
-    <a id="man-a" class="myButton" target="_blank">开始强制聊天</a>
+    <a id="man-a" class="myButton" target="_blank">开始强制聊天</a> <span>（只能在电脑使用）</span>
   </div>
   <div class="axiosImg">
     <div class="sjtxImg">
