@@ -111,7 +111,7 @@ categories:
         axios.get(`https://api.btstu.cn/sjbz/api.php?lx=${lx}&format=json`)
           .then(res => {
             imgLink.href = imgShow.src = '//images.weserv.nl/?url=' + res.data.imgurl
-            if (type === '2') {
+            if (type === 2) {
               window.open(imgLink.href)
             };
           });
@@ -129,7 +129,7 @@ categories:
   const getqrcode = (type) => {
     imgShow.src = '../img/loading.gif'
     imgLink.href = imgShow.src = `https://api.btstu.cn/qrcode/api.php?text=${qrcode.value}&size=${qrcodeSize.value}`
-    if (type === '2') {
+    if (type === 2) {
       window.open(imgLink.href)
     };
   }
