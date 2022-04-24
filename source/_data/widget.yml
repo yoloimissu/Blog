@@ -4,4 +4,4 @@ bottom:
       name: 访客信息
       icon: fas fa-heartbeat
       order:
-      html: ' <img src="https://api.btstu.cn/netcard/api.php" style="height: auto;width: 100%;" alt="">'
+      html: ' <img src="https://api.vvhan.com/api/ip" style="height: auto;width: 100%;" alt="">'
