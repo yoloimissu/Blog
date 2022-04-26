@@ -48,15 +48,32 @@
 .myH1 {
   font-weight: 700;
   font-size: 24px;
+  line-height: 30px;
 }
 
 .myH2 {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 25px;
 }
 
 .txtc {
   text-align: center;
+}
+#tags {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.jrscTag {
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+
+.myBody {
+  padding: 16px;
 }
 p,
 li,

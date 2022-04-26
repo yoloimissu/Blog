@@ -52,39 +52,41 @@ categories:
     <button class="myButton" onclick="getyan()">获取鸡汤</button>
     <p id="yantext" style="height: 20px;display: block;"></p>
   </div>
+ <div class="sweet yan mt20">
+    <button class="myButton" onclick="getSweetNothings()">获取土味情话</button>
+    <p id="sweettext"></p>
+  </div>
   <div class="jrsc mt20">
-    <button class="myButton" onclick="getjrsc()">获取今日诗词</button>
-    <div class="myH1" id="jrsctime"></div>
-    <div class="myH2" id="jrsccontent"></div>
-    <div class="jrscAll">
-      <p class="myH1 txtc" id="jrscTitle"></p> <br>
-      <p class="myH2 txtc" id="jrscAuthor"></p>
-      <ul id="jrscdata">
-      </ul>
-      <ul id="jrsctranslate">
-      </ul>
-    </div>
-    <p id="jrsctext" style="height: 20px;display: block;"></p>
+    <div id="tags" style="margin-bottom: 30px;"></div>
+    <p class="myH1 txtc" id="jrscTitle"></p>
+    <p class="myH2 txtc" id="jrscAuthor"></p>
+    <ul id="jrscdata">
+    </ul>
+    <ul id="jrsctranslate">
+    </ul>
   </div>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-  var manA = document.getElementById('man-a')
+   var manA = document.getElementById('man-a')
   var manInput = document.getElementById('man-input')
   var sjtx = document.getElementsByName('sjtx')
   var sjbz = document.getElementsByName('sjbz')
   var yantext = document.getElementById("yantext")
   var qrcode = document.getElementById("qrcode")
-  var jrsctext = document.getElementById("jrsctext")
-  var jrsctime = document.getElementById("jrsctime")
-  var jrsccontent = document.getElementById("jrsccontent")
   var qrcodeSize = document.getElementById("qrcodeSize")
+  var Tags = document.getElementById("tags")
   var jrscTitle = document.getElementById("jrscTitle")
   var jrscAuthor = document.getElementById("jrscAuthor")
   var jrscdata = document.getElementById("jrscdata")
   var jrsctranslate = document.getElementById("jrsctranslate")
+  var sweettext = document.getElementById("sweettext")
+  var tady = document.getElementById("tady")
+  var recently = document.getElementById("recently")
+  var zhishu = document.getElementById("zhishu")
+  var test = document.getElementById('test')
+  var test2 = document.getElementById('test2')
   var lx;
-  let flag = true
   //强制聊天
   manInput.onblur = () => {
     manA.href = 'https://api.btstu.cn/qqtalk/api.php?qq=' + manInput.value
@@ -134,40 +136,65 @@ categories:
     };
   }
   //获取今日诗词
-  const getjrsc = () => {
-    let time = 3
-    if (flag) {
-      axios.get('https://v2.jinrishici.com/one.json')
-        .then(res => {
-          let data = res.data.data
-          let origin = data.origin
-          flag = false
-          jrsccontent.innerText = data.content + '这句话出自那个古诗词'
-          let qq = setInterval(() => {
-            jrsctime.innerText = '倒计时：' + time
-            time--
-          }, 1000);
-          setTimeout(() => {
-            flag = true
-            clearInterval(qq)
-            jrsctime.innerText = ''
-            jrsccontent.innerText = '这句话出自：' + origin.title
-          }, 4000);
-          setTimeout(() => {
-            let jrscdataList='<li class="txtc">正文</li>', translate='<li class="txtc">译文</li>';
-            jrsccontent.innerText = ''
-            jrscTitle.innerHTML = origin.title
-            jrscAuthor.innerHTML = origin.dynasty + '·' + origin.author
-            origin.content.forEach(item => {
-              jrscdataList = jrscdataList + '<li class="txtc">' + item + '</li>'
-            })
-            jrscdata.innerHTML = jrscdataList
-            origin.translate.forEach(item => {
-              translate = translate + '<li class="txtc">' + item + '</li>'
-            });
-            jrsctranslate.innerHTML = translate
-          }, 6500);
+ const getjrsc = () => {
+    axios.get('https://v2.jinrishici.com/one.json')
+      .then(res => {
+        console.log(res);
+        let data = res.data.data
+        let origin = data.origin
+        let jrscdataList = '<li class="txtc">正文</li>', translate = '<li class="txtc">译文</li>';
+        jrscTitle.innerHTML = origin.title
+        jrscAuthor.innerHTML = origin.dynasty + '·' + origin.author
+        origin.content.forEach(item => {
+          jrscdataList = jrscdataList + '<li class="txtc">' + item + '</li>'
         })
-    };
+        jrscdata.innerHTML = jrscdataList
+        if (origin.translate) {
+          origin.translate.forEach(item => {
+            translate = translate + '<li class="txtc">' + item + '</li>'
+          });
+          jrsctranslate.innerHTML = translate
+        };
+      })
+    axios.get('https://v2.jinrishici.com/info')
+      .then(res => {
+        console.log(res.data.data);
+        let { ip, region, tags } = res.data.data
+        let tagList = '';
+        sessionStorage.setItem('ip', ip)
+        sessionStorage.setItem('region', region)
+        sessionStorage.setItem('tags', tags)
+        tags.forEach(ele => {
+          tagList = tagList + '<span class="jrscTag" style="' + Color() + '">' + ele + '</span>'
+        })
+        Tags.innerHTML = tagList
+      })
+  };
+  getjrsc()
+  const getSweetNothings = () => {
+    axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
+      .then(res => {
+        console.log(res);
+        sweettext.innerText = res.data.content
+      });
   }
+  const Color=()=> {
+    this.color = [
+      'color:#fff6e6;background-color:#415062',
+      'color:#d5cecd;background-color:#414441',
+      'color:#081408;background-color:#6a7962',
+      'color:#101020;background-color:#c5a562',
+      'color:#414c41;background-color:#b5eecd',
+      'color:#494c49;background-color:#d5c6ac',
+      'color:#ffffff;background-color:#5b8982',
+      'color:#ffffff;background-color:#bac8a0',
+      'color:#ddfced;background-color:#d47557',
+      'color:#e3927f;background-color:#223c5f',
+      'color:#f9ecdf;background-color:#825855',
+      'color:#adc7b5;background-color:#33eb40',
+      'color:#cfd468;background-color:#07553a',
+    ];
+    let num = Math.floor(Math.random() * this.color.length)
+    return color[num]
+  };
 </script>
