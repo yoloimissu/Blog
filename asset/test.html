@@ -7,20 +7,13 @@
   <title>Document</title>
 </head>
 <body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    let  twoSum = function(nums, target) {
-      let idx1,idx2
-      nums.forEach((ele,index)=>{
-        for(let i = index+1;i<nums.length;i++){
-          if(ele + nums[i]===target){
-            idx1=index;idx2=i
-          }
-        }
-      })
-      return [idx1,idx2]
-} ;
- let nums = [2,11,15,7], target = 9
- console.log( twoSum(nums,target));
+    console.log(axios);
+    axios.get('https://way.jd.com/jisuapi/search?keyword=白菜&num=10&start=0&appkey=2468a8a70237a71e951ef98832355948')
+    .then(res=>{
+      console.log(ress);
+    })
   </script>
 </body>
 </html>

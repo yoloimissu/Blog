@@ -9,10 +9,15 @@ top_img: /img/bgc.jpg
 有错误的介绍可以直接告诉我，也避免更多小白入坑
 
 邮箱： ysl_1998@126.com
-博客的另外地址：
+### 博客的另外地址：
+
+#### vercel地址
 
 [blog-yoloimissu.vercel.app](https://blog-yoloimissu.vercel.app/)
 [blog-git-master-yoloimissu.vercel.app](https://blog-git-master-yoloimissu.vercel.app/)
 [blog-ivory-six-38.vercel.app](https://blog-ivory-six-38.vercel.app/)
+
+#### gitee pages地址(可能忘了部署最新的)
+[gitee](https://yslin1126.gitee.io/)
 
 非常感谢你的浏览希望对你有所帮助

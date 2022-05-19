@@ -191,7 +191,6 @@ categories:
       'color:#ddfced;background-color:#d47557',
       'color:#e3927f;background-color:#223c5f',
       'color:#f9ecdf;background-color:#825855',
-      'color:#adc7b5;background-color:#33eb40',
       'color:#cfd468;background-color:#07553a',
     ];
     let num = Math.floor(Math.random() * this.color.length)
