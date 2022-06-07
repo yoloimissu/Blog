@@ -246,5 +246,24 @@ let scrollTop = document.documentElement.scrollTop;
   }
 ```
 
+### 分割数组5（x）个一组
+
+```js
+    let list = [1,2,3,4,5,6,7,8,9,10]
+     var arr = [];
+     var classifyList = list.reduce(function (pre, item, index, list) {
+       var begin = index * 5;
+       var end = begin + 5;
+       var res = list.slice(begin, end);
+       if (res.length != 0) {
+         arr[index] = res;
+       }
+       return arr;
+     }, []);
+     console.log(classifyList);
+```
+
+
+
 
 

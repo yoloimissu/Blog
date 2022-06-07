@@ -37,7 +37,7 @@ cursor:default丨auto丨crosshair丨pointer丨move丨e-resize丨ne-resize丨nw-r
   <div class="cursor-help">指示可用的帮助</div>
 </div>
 
-### 单行显示超出省略
+### 超出省略
 
 ```css
  {
@@ -47,6 +47,12 @@ cursor:default丨auto丨crosshair丨pointer丨move丨e-resize丨ne-resize丨nw-r
     overflow: hidden;
     text-overflow: ellipsis;
 }
+{width: 200px;设置宽度
+overflow: hidden;//超出隐藏
+-webkit-line-clamp: 2;//设置为几，就最多显示几行
+text-overflow: ellipsis;//隐藏的形式为...
+display: -webkit-box;
+    -webkit-box-orient: vertical;}
 ```
 <!-- more -->
 
