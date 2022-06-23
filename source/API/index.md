@@ -13,7 +13,6 @@ categories:
   顶部的hitokoto一言
   左侧头像下的今日诗词
 
-
 <div class="myBody">
   <div class="mandatory">
     <input type="text" id="man-input" placeholder="请输入QQ">
@@ -197,3 +196,8 @@ categories:
     return color[num]
   };
 </script>
+
+fastly.jsdelivr.net
+testingcf.jsdelivr.net
+gcore.jsdelivr.net
+quantil.jsdelivr.net
